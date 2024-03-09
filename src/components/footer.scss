@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px double #E5E5E5;
+  background-color: $light;
+  min-height: 56px;
+  padding: 8px;
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+
+    span {
+      color: brown;
+      font-weight: 700;
+    }
+  }
+}

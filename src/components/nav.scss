@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+
+  @include r($mobile) {
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 13px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2b7dbc;
+    background-color: transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 2px solid transparent;
+
+    @include r($mobile) {
+      flex-direction: row;
+      width: 100%;
+      margin: 0;
+      border: none;
+    }
+
+    &.active {
+      background-color: $light;
+      border-left: 1px solid $blue;
+      border-right: 1px solid $blue;
+      border-top: 2px solid #2b7dbc;
+      @include r($mobile) {
+        border: none;
+      }
+    }
+
+    i {
+      font-size: 18px;
+    }
+  }
+}

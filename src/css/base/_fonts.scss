@@ -1,0 +1,37 @@
+@font-face{
+  font-family:'vetis';
+  src: url('../assets/fonts/vetis.woff') format('woff');
+  font-weight:normal;
+  font-style:normal;
+}
+.vet{
+  display:inline-block;
+  font-family:vetis;
+  font-style:normal;
+  font-weight:normal;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size: 16px;
+}
+.vet-vetis:before{
+  content:"\f000";
+}
+.vet-eagle:before{
+  content:"\f002";
+}
+.vet-eagle-detail:before{
+  content:"\f001";
+}
+.vet-2x{
+  font-size: 32px;
+}
+.vet-4x{
+  font-size: 64px;
+}
+.vet-6x{
+  font-size: 128px;
+}
+.vet-68x{
+  font-size: 256px;
+}

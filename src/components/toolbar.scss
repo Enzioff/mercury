@@ -1,0 +1,51 @@
+.toolbar {
+  display: flex;
+
+  @include r($mobile) {
+    position: fixed;
+    top: 45px;
+    left: 0;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    background-color: $accent;
+    overflow: hidden;
+    transition: .2s linear;
+  }
+
+  &.active {
+    @include r($mobile) {
+      z-index: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    height: 100%;
+    border-left: 1px solid $accent-dark;
+    font-size: 13px;
+    color: $light;
+    cursor: pointer;
+
+    @include r($mobile) {
+      height: auto;
+      min-height: 45px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &.active {
+      cursor: auto;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+}

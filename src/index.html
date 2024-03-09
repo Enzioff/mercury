@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <%= htmlWebpackPlugin.options.head %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<header class="header">
+  <a href="/" class="logo">
+    <img src="./assets/images/logo.png" alt="">
+    Меркурий
+  </a>
+  <div class="toolbar" id="toolbar">
+    <a class="toolbar__item active">РУС</a>
+    <a class="toolbar__item">ENG</a>
+    <a class="toolbar__item">
+      <i class="ace-icon fa fa-share"></i>
+      Аргус
+    </a>
+    <a class="toolbar__item">
+      <i class="ace-icon fa fa-life-ring"></i>
+      Помощь
+    </a>
+  </div>
+  <div class="header__navbar">
+    <button class="header__button" data-trigger="sidebar">
+      <span class="burger">
+        <span class="burger__item"></span>
+      </span>
+    </button>
+    <button class="header__button" data-trigger="toolbar">
+      <i class="ace-icon fa fa-chevron-down"></i>
+    </button>
+  </div>
+</header>
+<main class="main">
+  <section class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <div class="window">
+        <div class="window__grid">
+          <button class="window__button green"></button>
+          <button class="window__button blue"></button>
+          <button class="window__button yellow"></button>
+          <button class="window__button red"></button>
+        </div>
+        <div class="window__dropdown">
+          <a href="#" class="window__link green">
+            <span class="window__item">
+                <i class="vet vet-eagle"></i>
+            </span>
+            <span class="tooltip">Россельхознадзор</span>
+          </a>
+          <a class="window__link blue">
+            <span class="window__item">
+                <i class="vet vet-vetis"></i>
+            </span>
+            <span class="tooltip">Ветис</span>
+          </a>
+          <a class="window__link yellow">
+            <span class="window__item">
+                <i class="ace-icon fa fa-users"></i>
+            </span>
+            <span class="tooltip">Справочная система</span>
+          </a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav__link active">
+          <i class="menu-icon fa fa-check-circle"></i>
+          Проверить ВСД
+        </a>
+      </nav>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content__header" data-content-header>
+      <h1 class="title">Проверка ветеринарного сопроводительного документа</h1>
+    </div>
+    <div class="page-content__body">
+      <form action="#" class="form">
+        <label class="form__item">
+          <span>Код ВСД <sup>*</sup></span>
+          <span class="input">
+              <input type="text" data-code maxlength="39">
+              <button type="submit" class="btn btn-sm btn-default">
+                  <span>
+                      <i class="fa fa-search"></i>
+                  </span>
+              </button>
+          </span>
+        </label>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

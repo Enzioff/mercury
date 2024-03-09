@@ -1,0 +1,35 @@
+.burger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: flex;
+    width: 24px;
+    height: 2px;
+    background-color: $light;
+  }
+
+  &::before {
+    top: 5px;
+  }
+
+  &::after {
+    top: 17px;
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+    display: flex;
+    width: 24px;
+    height: 2px;
+    background-color: $light;
+  }
+}
