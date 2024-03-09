@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const scrollEvent = () => {
   const contentHeader = document.querySelectorAll("[data-content-header]");
-  const sidebar = document.getElementById("sidebar");
   const content = document.querySelector(".page-content");
 
   contentHeader.forEach((header) => {
@@ -26,11 +25,10 @@ const scrollEvent = () => {
       }
     });
     if (window.innerWidth <= 991) {
-      sidebar.style.top = `${headerHeight + 45}px`;
+      content.style.paddingTop = `${headerHeight}px`;
     }
     window.addEventListener("resize", () => {
       headerHeight = parseInt(getComputedStyle(header).height, 10);
-      sidebar.style.top = `${headerHeight + 45}px`;
       if (window.innerWidth <= 991) {
         content.style.paddingTop = `${headerHeight}px`;
       } else {

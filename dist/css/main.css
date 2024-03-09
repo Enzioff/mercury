@@ -16027,6 +16027,7 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 20px;
 }
 @media only screen and (max-width: 991px) {
   .form {
