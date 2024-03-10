@@ -7,6 +7,16 @@
     width: 100%;
   }
 
+  &--small {
+    max-width: 350px;
+    width: 100%;
+
+    .input {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
   &__item {
     display: flex;
     align-items: center;

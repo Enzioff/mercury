@@ -6,3 +6,5 @@ import "./sprite";
 import "./mask";
 import "./scroll";
 import "./dropdown";
+import "./showHidden";
+import "./form";

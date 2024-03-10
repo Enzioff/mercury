@@ -6,6 +6,9 @@
   }
 
   &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 17px;
     border-bottom: 1px dotted #e2e2e2;
@@ -25,6 +28,8 @@
       position: fixed;
       top: 45px;
       left: 0;
+      flex-wrap: wrap;
+      gap: 10px;
       width: 100%;
       padding: 20px;
       background-color: #fcf5f5;
@@ -38,5 +43,17 @@
     flex-direction: column;
     gap: 20px;
     padding-top: 10px;
+  }
+
+  &__toolbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 350px;
+
+    @include r($mobile) {
+      min-width: 100%;
+      align-items: flex-start;
+    }
   }
 }

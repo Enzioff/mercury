@@ -11,13 +11,24 @@ const scrollEvent = () => {
     let headerHeight = parseInt(getComputedStyle(header).height, 10);
 
     window.addEventListener("scroll", () => {
+      console.log(headerOffsetTop, headerHeight);
       if (window.innerWidth >= 992) {
-        if (window.pageYOffset >= headerOffsetTop - headerHeight) {
-          header.classList.add("fixed");
-          content.style.marginTop = `${headerHeight}px`;
+        if (headerOffsetTop < headerHeight) {
+          if (window.pageYOffset >= headerHeight - headerOffsetTop) {
+            header.classList.add("fixed");
+            content.style.marginTop = `${headerHeight}px`;
+          } else {
+            header.classList.remove("fixed");
+            content.style.marginTop = `0px`;
+          }
         } else {
-          header.classList.remove("fixed");
-          content.style.marginTop = `0px`;
+          if (window.pageYOffset >= headerOffsetTop - headerHeight) {
+            header.classList.add("fixed");
+            content.style.marginTop = `${headerHeight}px`;
+          } else {
+            header.classList.remove("fixed");
+            content.style.marginTop = `0px`;
+          }
         }
       } else {
         header.classList.remove("fixed");

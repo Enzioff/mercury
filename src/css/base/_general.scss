@@ -29,11 +29,20 @@ body {
   min-width: 300px;
   font-family: $font-main;
   font-size: 16px;
-  line-height: 1;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+
+  span {
+    color: #808080;
+  }
 }
 
 .main {
@@ -72,5 +81,39 @@ h1, h2, h3, h4, h5, h6, p {
 
   &:hover {
     background-color: #b74635;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.row {
+  @include r($mobile) {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.print {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #70A0C1;
+  padding: 4px 10px;
+  background-color: transparent;
+  &:hover {
+    background-color: #eef5fa;
+    i {
+      font-size: 20px;
+    }
+  }
+
+  i {
+    font-size: 16px;
+    text-align: center;
   }
 }
