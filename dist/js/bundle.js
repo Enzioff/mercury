@@ -6932,6 +6932,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/admin.js":
+/*!*************************!*\
+  !*** ./src/js/admin.js ***!
+  \*************************/
+/***/ (function() {
+
+document.addEventListener("DOMContentLoaded", () => {
+  responseAdmin();
+});
+
+const responseAdmin = () => {
+  const mainForm = document.querySelector("[data-form]");
+  mainForm.addEventListener("submit", (evt) => {});
+};
+
+
+/***/ }),
+
 /***/ "./src/js/alert.js":
 /*!*************************!*\
   !*** ./src/js/alert.js ***!
@@ -7053,7 +7071,6 @@ const scrollEvent = () => {
     let headerHeight = parseInt(getComputedStyle(header).height, 10);
 
     window.addEventListener("scroll", () => {
-      console.log(headerOffsetTop, headerHeight);
       if (window.innerWidth >= 992) {
         if (headerOffsetTop < headerHeight) {
           if (window.pageYOffset >= headerHeight - headerOffsetTop) {
@@ -7140,6 +7157,89 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
 
 });
+
+
+/***/ }),
+
+/***/ "./src/js/table.js":
+/*!*************************!*\
+  !*** ./src/js/table.js ***!
+  \*************************/
+/***/ (function() {
+
+document.addEventListener("DOMContentLoaded", () => {
+  addMoreTable();
+});
+
+const addMoreTable = () => {
+  const blocks = document.querySelectorAll("[data-table-block]");
+
+  blocks.forEach((block) => {
+    const table = block.querySelector("[data-table-body]");
+    const addButton = block.querySelector("[data-table-add]");
+    const tableType = block.getAttribute("data-table-block");
+
+    addButton.addEventListener("click", () => {
+      table.insertAdjacentHTML("beforeend", getCurrentTemplate(tableType));
+    });
+
+    table.addEventListener("click", (evt) => {
+      const { target } = evt;
+      if (target.tagName === "TD" && target.dataset.tableRemove === "") {
+        target.closest("tr").remove();
+      }
+    });
+  });
+};
+
+const getCurrentTemplate = (type) => {
+  if (type === "docs") {
+    return tableLineDocsTemplate();
+  } else {
+    return tableLineLabTemplate();
+  }
+};
+
+const tableLineDocsTemplate = () => {
+  return `
+    <tr>
+      <td><input type="text" name="docSeries"></td>
+      <td><input type="text" name="docNumber"></td>
+      <td><input type="date" name="docDate"></td>
+      <td>
+        <select name="docType" id="">
+          <option value="">Транспортная накладная</option>
+          <option value="">Транспортная накладная</option>
+          <option value="">Транспортная накладная</option>
+          <option value="">Транспортная накладная</option>
+        </select>
+      </td>
+      <td class="info__remove" data-table-remove>-</td>
+    </tr>
+  `;
+};
+
+const tableLineLabTemplate = () => {
+  return `
+    <tr>
+      <td><input type="text" name="actNumber"></td>
+      <td><input type="text" name="sumplingDate"></td>
+      <td><input type="text" name="labName"></td>
+      <td><input type="text" name="indicatorName"></td>
+      <td><input type="date" name="resultDate"></td>
+      <td><input type="text" name="researchMethod"></td>
+      <td><input type="text" name="expertiseNumber"></td>
+      <td>
+        <select name="researchResult">
+          <option value="#">Положительный</option>
+          <option value="#">Отрицательный</option>
+        </select>
+      </td>
+      <td><input type="text" name="conclusion"></td>
+      <td class="info__remove" data-table-remove>-</td>
+    </tr>
+  `;
+};
 
 
 /***/ })
@@ -7230,6 +7330,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _showHidden__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./showHidden */ "./src/js/showHidden.js");
 /* harmony import */ var _showHidden__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_showHidden__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
+/* harmony import */ var _table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./table */ "./src/js/table.js");
+/* harmony import */ var _table__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_table__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./admin */ "./src/js/admin.js");
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_admin__WEBPACK_IMPORTED_MODULE_9__);
+
+
 
 
 

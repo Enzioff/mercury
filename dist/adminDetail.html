@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="./assets/images/mercury.ico" type="image/x-icon">
+  <title>Админка</title>
+<link href="./css/main.css" rel="stylesheet"></head>
+
+<body class="body">
+<header class="header">
+  <a href="/" class="logo">
+    <img src="./assets/images/logo.png" alt="">
+    Меркурий
+  </a>
+</header>
+<main class="main">
+  <section class="sidebar" id="sidebar"></section>
+  <section class="page-content">
+    <div class="page-content__header" data-content-header>
+      <h1 class="title">Просмотр информации о ВСД</h1>
+      <div class="page-content__toolbox">
+        <form action="http://localhost:9000" class="form form--small">
+          <label class="form__item">
+                    <span class="input">
+                      <input type="text" data-code maxlength="39" placeholder="поиск по коду ветеринарного документа">
+                      <button type="submit" class="btn btn-sm btn-default">
+                          <span>
+                              <i class="fa fa-search"></i>
+                          </span>
+                      </button>
+                  </span>
+          </label>
+        </form>
+        <button class="print">
+          <i class="ace-icon fa fa-print bigger-110"></i>
+          <span>Печать</span>
+        </button>
+      </div>
+    </div>
+    <form class="info info--admin" data-form action="http://localhost:9000/adminDetail.html">
+      <div class="info__block">
+        <div class="info__header">
+          <h2 class="info__title">Общие сведения</h2>
+        </div>
+        <div class="info__detail">
+          <div class="info__item">
+            <label class="info__name" for="status">
+              <span>Статус</span>
+            </label>
+            <div class="info__value">
+              <select name="status" id="status">
+                <option value="#">погашён</option>
+                <option value="#">оформлен</option>
+              </select>
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="numberVSD">
+              <span>Номер ВСД</span>
+            </label>
+            <div class="info__value">
+              <input type="number" id="numberVSD">
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="VSDID">
+              <span>Уникальный идентификатор ВСД</span>
+            </label>
+            <div class="info__value">
+              <input type="text" data-code="" maxlength="39" id="VSDID" inputmode="text">
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="date">
+              <span>Дата оформления</span>
+            </label>
+            <div class="info__value">
+              <textarea name="" id="date"></textarea>
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="VSDName">
+              <span>Наименование и форма ВСД</span>
+            </label>
+            <div class="info__value">
+              <input type="text" id="VSDName">
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="registration">
+              <span>Способ оформления</span>
+            </label>
+            <div class="info__value">
+              <input type="text" id="registration">
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="VSDform">
+              <span>Защищенный бланк ВСД</span>
+            </label>
+            <div class="info__value">
+              <input type="text" id="VSDform">
+            </div>
+          </div>
+          <div class="info__item">
+            <label class="info__name" for="regionalization">
+              <span>Регионализация</span>
+            </label>
+            <div class="info__value">
+              <input type="text" id="regionalization">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Информация о продукции</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="number">
+                  <span>Номер производственной партии</span>
+                </label>
+                <div class="info__value">
+                  <input type="number" id="number">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productName">
+                  <span>Название продукции</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="productName">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="article">
+                  <span>Артикул</span>
+                </label>
+                <div class="info__value">
+                  <input type="number" id="article">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="volume">
+                  <span>Объём</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="volume">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productDate">
+                  <span>Дата выработки продукции</span>
+                </label>
+                <div class="info__value">
+                  <input type="date" id="productDate">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="validDate">
+                  <span>Годен до</span>
+                </label>
+                <div class="info__value">
+                  <input type="date" id="validDate">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="results">
+                  <span>Результат лабораторного исследования</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="results"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="packaging">
+                  <span>Упаковка</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="packaging"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="wellBeing">
+                  <span>Благополучие местности</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="wellBeing"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="goal">
+                  <span>Цель</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="goal">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="expertiza">
+                  <span>Ветеринарно-санитарная экспертиза</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="expertiza"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="label">
+                  <span>Особые отметки</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="label">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="numberAndDateInnerVsd">
+                  <span>Номер и дата входящего ВСД</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="numberAndDateInnerVsd">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="numberAndDateProductionVsd">
+                  <span>Номер и дата производственного ВСД</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="numberAndDateProductionVsd">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="note">
+                  <span>Примечание</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="note">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения о транспорте</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="transactionType">
+                  <span>Тип транзакции</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="transactionType">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="vehicleType">
+                  <span>Тип транспорта</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="vehicleType">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="vehicleNumber">
+                  <span>Номер автомашины / полуприцепа /<br> контейнера</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="vehicleNumber">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="keeping">
+                  <span>Способ хранения при перевозке</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="keeping">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения об оформлении</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="institution">
+                  <span>Учреждение</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="institution"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="fio">
+                  <span>ФИО</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="fio">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="post">
+                  <span>Должность</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="post">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="tel">
+                  <span>Контактный телефон</span>
+                </label>
+                <div class="info__value">
+                  <input type="tel" id="tel">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения о гашении</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="paidOff">
+                  <span>Кто погасил</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="paidOff">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="paidDate">
+                  <span>Дата гашения</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="paidDate">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения о происхождении продукции</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="country">
+                  <span>Страна происхождения</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="country">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="developed">
+                  <span>Выработанная</span>
+                </label>
+                <div class="info__value">
+                  <textarea name="" id="developed"></textarea>
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productNameAndProduction">
+                  <span>Наименование продукции при производстве</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="productNameAndProduction">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="articleManufacturer">
+                  <span>Артикул производителя</span>
+                </label>
+                <div class="info__value">
+                  <input type="number" id="articleManufacturer">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="GTIN">
+                  <span>GTIN</span>
+                </label>
+                <div class="info__value">
+                  <input type="number" id="GTIN">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="docs">
+                  <span>Документ, подтверждающий происхождение</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="docs">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">
+                Служебная информация
+              </h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="UUID">
+                  <span>Уникальный идентификатор версии номенклатуры (UUID)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="UUID">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="GUID">
+                  <span>Глобальный идентификатор номенклатуры (GUID)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="GUID">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productUUID">
+                  <span>Уникальный идентификатор версии продукции при производстве (UUID)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" data-code="" maxlength="39" inputmode="text" id="productUUID">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productGUID">
+                  <span>Глобальный идентификатор продукции при производстве (GUID)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" data-code="" maxlength="39" inputmode="text" id="productGUID">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения о получателе</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="companyName">
+                  <span>Название предприятия</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="companyName">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productOwner">
+                  <span>Хозяйствующий субъект (владелец продукции)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="productOwner">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+          <div class="info__block">
+            <div class="info__header">
+              <h2 class="info__title">Сведения об отправителе</h2>
+            </div>
+            <div class="info__detail">
+              <div class="info__item">
+                <label class="info__name" for="companyNameInformation">
+                  <span>Название предприятия</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="companyNameInformation">
+                </div>
+              </div>
+              <div class="info__item">
+                <label class="info__name" for="productOwnerInformation">
+                  <span>Хозяйствующий субъект (владелец продукции)</span>
+                </label>
+                <div class="info__value">
+                  <input type="text" id="productOwnerInformation">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info__block" data-table-block="docs">
+        <div class="info__header">
+          <h2 class="info__title">Сведения о документах</h2>
+        </div>
+        <div class="info__scroll">
+          <table class="info__table table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th>Серия</th>
+              <th>Номер</th>
+              <th>Дата</th>
+              <th>Тип</th>
+            </tr>
+            </thead>
+            <tbody data-table-body>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="date"></td>
+              <td>
+                <select name="" id="">
+                  <option value="">Транспортная накладная</option>
+                  <option value="">Транспортная накладная</option>
+                  <option value="">Транспортная накладная</option>
+                  <option value="">Транспортная накладная</option>
+                </select>
+              </td>
+              <td class="info__remove" data-table-remove>-</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+          <button class="add-more" type="button" data-table-add>+</button>
+      </div>
+      <div class="info__block" data-table-block="lab">
+        <div class="info__header">
+          <h2 class="info__title">Лабораторные исследования</h2>
+        </div>
+        <div class="info__scroll">
+          <table class="info__table info__table--accent table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th>Номер акта отбора проб</th>
+              <th>Дата отбора проб</th>
+              <th>Наименование лаборатории</th>
+              <th>Наименование показателя</th>
+              <th>Дата получения результата</th>
+              <th>Метод исследования</th>
+              <th>№ экспертизы</th>
+              <th>Результат исследования</th>
+              <th>Заключение</th>
+            </tr>
+            </thead>
+            <tbody data-table-body>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="date"></td>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td>
+                <select name="#">
+                  <option value="#">Положительный</option>
+                  <option value="#">Отрицательный</option>
+                </select>
+              </td>
+              <td><input type="text"></td>
+              <td class="info__remove" data-table-remove>-</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+          <button class="add-more" type="button" data-table-add>+</button>
+      </div>
+      <button class="form__submit">Сохранить</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer__text"><span>Меркурий</span> версия 6.81.4 © 2010-2024</p>
+  </div>
+</footer>
+<!-- Это временная секция, здесь ссылки на все страницы. На продакшене ее не будет -->
+<section class="section">
+    <div class="container">
+        <style>
+            .temp {
+                gap: 15px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .temp__link {
+                color: inherit;
+                font-family: 'Manrope', sans-serif;
+                font-size: 16px;
+                text-decoration: underline;
+            }
+
+            .temp__link:hover {
+                text-decoration: none;
+            }
+        </style>
+        <div class="temp">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./detail.html" class="temp__link">Детальная</a>
+            <a href="./adminDetail.html" class="temp__link">Админка</a>
+        </div>
+    </div>
+</section>
+
+
+<script defer src="js/bundle.js"></script></body>
+</html>

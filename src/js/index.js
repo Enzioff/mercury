@@ -7,3 +7,5 @@ import "./mask";
 import "./scroll";
 import "./showHidden";
 import "./form";
+import "./table";
+import "./admin";

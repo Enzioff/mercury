@@ -11,7 +11,6 @@ const scrollEvent = () => {
     let headerHeight = parseInt(getComputedStyle(header).height, 10);
 
     window.addEventListener("scroll", () => {
-      console.log(headerOffsetTop, headerHeight);
       if (window.innerWidth >= 992) {
         if (headerOffsetTop < headerHeight) {
           if (window.pageYOffset >= headerHeight - headerOffsetTop) {

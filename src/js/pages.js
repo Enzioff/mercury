@@ -10,26 +10,37 @@ const temp = fs.readFileSync("src/includes/temp.html");
 
 // Pages
 module.exports = [
-	new HtmlWebpackPlugin({
-		template: "./src/index.html",
-		filename: "index.html",
-		inject: "body",
-		title: "Главная",
-		head,
-		sectionHeader,
-		sectionFooter,
-		temp,
-		hidden
-	}),
-	new HtmlWebpackPlugin({
-		template: "./src/pages/detail.html",
-		filename: "detail.html",
-		inject: "body",
-		title: "Детальная",
-		head,
-		sectionHeader,
-		sectionFooter,
-		temp,
-		hidden
-	}),
+  new HtmlWebpackPlugin({
+    template: "./src/index.html",
+    filename: "index.html",
+    inject: "body",
+    title: "Главная",
+    head,
+    sectionHeader,
+    sectionFooter,
+    temp,
+    hidden,
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/pages/detail.html",
+    filename: "detail.html",
+    inject: "body",
+    title: "Детальная",
+    head,
+    sectionHeader,
+    sectionFooter,
+    temp,
+    hidden,
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/pages/adminDetail.html",
+    filename: "adminDetail.html",
+    inject: "body",
+    title: "Админка",
+    head,
+    sectionHeader,
+    sectionFooter,
+    temp,
+    hidden,
+  }),
 ];

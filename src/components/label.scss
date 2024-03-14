@@ -1,14 +1,18 @@
 .label {
   display: inline-block;
   padding: .2em .6em .3em;
-  color: $light;
+  color: $black;
   line-height: 1;
 
   &--warning {
+    color: $light;
     background-color: #f89406;
+    border: none;
   }
 
   &--success {
+    color: $light;
     background-color: #82af6f;
+    border: none;
   }
 }
