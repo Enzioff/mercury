@@ -4,5 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const responseAdmin = () => {
   const mainForm = document.querySelector("[data-form]");
-  mainForm.addEventListener("submit", (evt) => {});
+  if (mainForm) {
+    mainForm.addEventListener("submit", (evt) => {});
+  }
 };

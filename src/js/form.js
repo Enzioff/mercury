@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const initForm = () => {
   const form = document.querySelector(".form");
 
+  if (!form) return;
+
   form.addEventListener("submit", (evt) => {
     evt.preventDefault();
     const url = form.getAttribute("action");
@@ -28,7 +30,10 @@ const initForm = () => {
       axios
         .post(url, data)
         .then((response) => response.data)
-        .then((data) => console.log(data))
+        .then((data) => {
+          const { ID } = data.fileds;
+          window.location = `${window.location.href}?_id=${ID}`;
+        })
         .catch(() => {
           initAlert();
         });
