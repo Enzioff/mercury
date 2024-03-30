@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="./assets/images/mercury.ico" type="image/x-icon">
+  <title>Главная</title>
+<link href="./css/main.css" rel="stylesheet"></head>
+
+<body class="body">
+<header class="header">
+  <a href="/" class="logo">
+    <img src="./assets/images/logo.png" alt="">
+    Меркурий
+  </a>
+</header>
+<main class="main">
+  <section class="sidebar" id="sidebar"></section>
+  <section class="page-content">
+    <div class="alert alert--danger" data-alert>
+      <p>Ветеринарный сопроводительный документ с указанным кодом не найден</p>
+      <button class="alert__close" data-close>
+        <i class="ace-icon fa fa-times"></i>
+      </button>
+    </div>
+    <div class="page-content__header" data-content-header>
+      <h1 class="title">Проверка ветеринарного сопроводительного документа</h1>
+    </div>
+    <div class="page-content__body">
+      <form action="http://localhost:9000" class="form" method="POST">
+        <label class="form__item">
+          <span>Код ВСД <sup>*</sup></span>
+          <span class="input">
+              <input type="text" data-code maxlength="39" min="39" required data-title="Код ветеринарного документа указан некорректно">
+              <button type="submit" class="btn btn-sm btn-default">
+                  <span>
+                      <i class="fa fa-search"></i>
+                  </span>
+              </button>
+          </span>
+        </label>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div class="modal" data-modal>
+  <article class="article-modal">
+    <p class="article-modal__title">Добавлена новая запись.</p>
+    <p class="article-modal__text"></p>
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer__text"><span>Меркурий</span> версия 6.81.4 © 2010-2024</p>
+  </div>
+</footer>
+
+<!-- Это временная секция, здесь ссылки на все страницы. На продакшене ее не будет -->
+<section class="section">
+    <div class="container">
+        <style>
+            .temp {
+                gap: 15px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .temp__link {
+                color: inherit;
+                font-family: 'Manrope', sans-serif;
+                font-size: 16px;
+                text-decoration: underline;
+            }
+
+            .temp__link:hover {
+                text-decoration: none;
+            }
+        </style>
+        <div class="temp">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./detail.html" class="temp__link">Детальная</a>
+            <a href="./adminDetail.html" class="temp__link">Админка</a>
+        </div>
+    </div>
+</section>
+
+
+<script defer src="js/bundle.js"></script></body>
+</html>

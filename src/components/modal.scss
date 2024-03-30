@@ -1,0 +1,21 @@
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color: $accent;
+  color: $light;
+  border: 1px solid $light;
+  transform: translate(-50%, -120%);
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+}

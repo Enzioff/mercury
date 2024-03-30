@@ -34,17 +34,10 @@ const getCurrentTemplate = (type) => {
 const tableLineDocsTemplate = () => {
   return `
     <tr>
-      <td><input type="text" name="docSeries"></td>
-      <td><input type="text" name="docNumber"></td>
-      <td><input type="date" name="docDate"></td>
-      <td>
-        <select name="docType" id="">
-          <option value="">Транспортная накладная</option>
-          <option value="">Транспортная накладная</option>
-          <option value="">Транспортная накладная</option>
-          <option value="">Транспортная накладная</option>
-        </select>
-      </td>
+      <td><input type="text" name="SERIA_DOC"></td>
+      <td><input type="text" name="NUMBER_DOC"></td>
+      <td><input type="date" name="DATE_DOC"></td>
+      <td> <input type="text" name="TYPE"> </td>
       <td class="info__remove" data-table-remove>-</td>
     </tr>
   `;
@@ -53,20 +46,15 @@ const tableLineDocsTemplate = () => {
 const tableLineLabTemplate = () => {
   return `
     <tr>
-      <td><input type="text" name="actNumber"></td>
-      <td><input type="text" name="sumplingDate"></td>
-      <td><input type="text" name="labName"></td>
-      <td><input type="text" name="indicatorName"></td>
-      <td><input type="date" name="resultDate"></td>
-      <td><input type="text" name="researchMethod"></td>
-      <td><input type="text" name="expertiseNumber"></td>
-      <td>
-        <select name="researchResult">
-          <option value="#">Положительный</option>
-          <option value="#">Отрицательный</option>
-        </select>
-      </td>
-      <td><input type="text" name="conclusion"></td>
+      <td><input type="text" name="NUMBER_ACT"></td>
+      <td><input type="text" name="DATE"></td>
+      <td><input type="text" name="NAME_LAB"></td>
+      <td><input type="text" name="NAME"></td>
+      <td><input type="date" name="DATE_RESULT"></td>
+      <td><input type="text" name="NUMBER"></td>
+      <td><input type="text" name="METHOD"></td>
+      <td><input type="text" name="RESULT"></td>
+      <td><input type="text" name="CONCLUSION"></td>
       <td class="info__remove" data-table-remove>-</td>
     </tr>
   `;

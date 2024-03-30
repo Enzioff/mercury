@@ -32,7 +32,7 @@ const initForm = () => {
         .then((response) => response.data)
         .then((data) => {
           const { ID } = data.fileds;
-          window.location = `${window.location.href}?_id=${ID}`;
+          window.location = `${window.location.origin}?_id=${ID}`;
         })
         .catch(() => {
           initAlert();
