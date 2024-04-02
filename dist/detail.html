@@ -24,21 +24,25 @@
   <section class="sidebar" id="sidebar"></section>
   <section class="page-content">
     <div class="page-content__header" data-content-header>
+      <button class="print mobile-only">
+        <i class="ace-icon fa fa-print bigger-110"></i>
+        <span>Печать</span>
+      </button>
       <h1 class="title">Просмотр информации о ВСД</h1>
       <div class="page-content__toolbox">
         <form action="#" class="form form--small">
           <label class="form__item">
-                    <span class="input">
-                      <input type="text" data-code maxlength="39" placeholder="поиск по коду ветеринарного документа">
-                      <button type="submit" class="btn btn-sm btn-default">
-                          <span>
-                              <i class="fa fa-search"></i>
-                          </span>
-                      </button>
+            <span class="input">
+              <input type="text" data-code maxlength="39" placeholder="поиск по коду ветеринарного документа">
+              <button type="submit" class="btn btn-sm btn-default">
+                  <span>
+                      <i class="fa fa-search"></i>
                   </span>
+              </button>
+          </span>
           </label>
         </form>
-        <button class="print">
+        <button class="print mob-hidden">
           <i class="ace-icon fa fa-print bigger-110"></i>
           <span>Печать</span>
         </button>

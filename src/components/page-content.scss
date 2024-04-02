@@ -28,8 +28,9 @@
       position: fixed;
       top: 45px;
       left: 0;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 5px;
       width: 100%;
       padding: 20px;
       background-color: #fcf5f5;
@@ -53,7 +54,6 @@
 
     @include r($mobile) {
       min-width: 100%;
-      align-items: flex-start;
     }
   }
 }

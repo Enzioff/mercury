@@ -15059,6 +15059,25 @@ ul span {
   font-size: 16px;
   text-align: center;
 }
+@media only screen and (max-width: 991px) {
+  .print {
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mob-hidden {
+    display: none;
+  }
+}
 
 .mb-32 {
   margin-bottom: 32px;
@@ -16036,10 +16055,16 @@ ul span {
     position: fixed;
     top: 45px;
     left: 0;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    gap: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 5px;
     width: 100%;
     padding: 20px;
     background-color: #fcf5f5;
@@ -16082,10 +16107,6 @@ ul span {
 @media only screen and (max-width: 991px) {
   .page-content__toolbox {
     min-width: 100%;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
   }
 }
 

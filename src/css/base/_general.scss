@@ -116,4 +116,20 @@ ul {
     font-size: 16px;
     text-align: center;
   }
+
+  @include r($mobile) {
+    align-self: flex-end;
+  }
+}
+
+.mobile-only {
+  @include rmin($mobile + 1) {
+    display: none;
+  }
+}
+
+.mob-hidden {
+  @include r($mobile) {
+    display: none;
+  }
 }
